@@ -61,7 +61,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassificationFormat.cs" />
     <Compile Include="RelativeLineNumbers.cs" />
     <Compile Include="RelativeLineNumbersFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

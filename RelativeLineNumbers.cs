@@ -76,7 +76,7 @@ namespace RelativeLineNumbers
 			_formatMap.FormatMappingChanged += (sender, args) => DrawLineNumbers();
 
 			this.ToolTip = "To customize Relative Line Numbers select:\n" +
-			               "  Tools -> Options -> Fonts and Colors -> Relative Line Numbers";
+			               "  Tools -> Options -> Fonts and Colors -> Line Numbers";
 		}
 
 		#endregion
@@ -158,7 +158,8 @@ namespace RelativeLineNumbers
 				_canvas.Children.Clear();
 			}
 
-			ResourceDictionary rd = _formatMap.GetProperties("Relative Line Numbers");
+			// 'line number' is the default line number property in VS, it is used for absolute line numbers.
+			ResourceDictionary rd = _formatMap.GetProperties("line number");
 			SolidColorBrush fgBrush = (SolidColorBrush)rd[EditorFormatDefinition.ForegroundBrushId];
 			FontWeight fontWeight = Convert.ToBoolean(rd[ClassificationFormatDefinition.IsBoldId]) ?
 				                         FontWeights.Bold : FontWeights.Normal;
